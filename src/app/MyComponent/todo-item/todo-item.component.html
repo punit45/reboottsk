@@ -1,0 +1,28 @@
+
+<div class="card">
+<div class="card-body">
+    <div [ngClass]="{'strike': todo.isDone}">
+        <h5 class="card-title"> {{todo.title}} </h5>
+    <div>
+
+    <p>
+        {{todo.description}} </p>
+
+    <div class="form-check">
+        <label class="form-check-label" for="flexCheckChecked{{ todo.no }}">
+            {{ todo.isDone ? 'Undone' : 'Done' }}
+        </label>
+        <input 
+        class="form-check-input" 
+        type="checkbox" 
+        id="flexCheckChecked{{ todo.no }}" (click)="onCompleteClick(todo)" 
+        [checked]="todo.isDone">
+        <label class="form-check-label" for="flexCheckChecked{{ todo.no }}">
+    <span>
+
+     <button type="button" class="btn btn-danger"  style="margin-left: 16px; font-size: small;" (click)="delClick(todo)">Delete</button>
+    </span>
+    </label>
+</div>
+</div>
+

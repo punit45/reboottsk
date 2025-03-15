@@ -1,0 +1,61 @@
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Add todo
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered"> <!-- Larger & Centered -->
+            <div class="modal-content p-4 shadow-lg rounded">
+              <form (ngSubmit)="onSubmit()">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-4 text-center w-100">Add A New Todo</h1> 
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="title" class="form-label fw-bold">Todo Title</label>
+                    <input type="text" placeholder="Enter your title" [(ngModel)]="title" name="title" class="form-control" id="title">
+                  </div>
+                  <div class="mb-3">
+                    <label for="desc" class="form-label fw-bold">Todo Description</label>
+                    <input type="text" placeholder="Enter your description" [(ngModel)]="desc" name="desc" class="form-control" id="desc">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        <div id="liveToast" 
+        class="toast align-items-center text-white bg-danger border-0 position-fixed start-50 translate-middle-x bottom-0 mb-3" 
+        role="alert" 
+        aria-live="assertive" 
+        aria-atomic="true">
+     <div class="d-flex">
+       <div class="toast-body">
+         Title cannot be empty!
+       </div>
+       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+     </div>
+   </div>
+
+   <div id="liveToastSubmit" 
+        class="toast align-items-center text-white bg-success border-0 position-fixed start-50 translate-middle-x bottom-0 mb-3" 
+        role="alert" 
+        aria-live="assertive" 
+        aria-atomic="true">
+     <div class="d-flex">
+       <div class="toast-body">
+         Todo Added Successfully! 
+       </div>
+       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+     </div>
+   </div>
+   
+        
+  
+    
